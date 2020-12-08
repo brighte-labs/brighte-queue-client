@@ -5,6 +5,7 @@ namespace App\Test\Queue\Factories;
 use App\Test\BaseTestCase;
 use BrighteCapital\QueueClient\Queue\Factories\QueueClientFactory;
 use BrighteCapital\QueueClient\Queue\Sqs\SqsClient;
+use Enqueue\Sqs\SqsDestination;
 
 class QueueClientFactoryTest extends BaseTestCase
 {
@@ -19,7 +20,15 @@ class QueueClientFactoryTest extends BaseTestCase
 
     public function testCreate()
     {
-        $this->assertInstanceOf(SqsClient::class, $this->factory->create(['provider' => 'sqs', 'queue' => 'queue']));
+        $client = $this->factory->create([
+            'provider' => 'sqs',
+            'queue' => 'queue',
+            'region' => 'ap-southeast-2',
+        ]);
+        $destination = $client->getDestination();
+        $this->assertInstanceOf(SqsClient::class, $client);
+        $this->assertInstanceOf(SqsDestination::class, $destination);
+        $this->assertEquals('ap-southeast-2', $destination->getRegion());
     }
 
     public function testCreateFailed()
