@@ -51,12 +51,7 @@ class SqsClientTest extends TestCase
         $this->consumer = $this->createMock(SqsConsumer::class);
         $this->sqsDestination = $this->createMock(SqsDestination::class);
 
-        $this->sqsContext
-            ->expects($this->once())
-            ->method('createQueue')
-            ->willReturn($this->createMock(SqsDestination::class));
-
-        $this->sqsClient = new SqsClient($config['Queue'], $this->sqsContext);
+        $this->sqsClient = new SqsClient($this->sqsDestination, $this->sqsContext);
     }
 
     public function testReceiveMessage()

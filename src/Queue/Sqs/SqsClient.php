@@ -6,6 +6,7 @@ use BrighteCapital\QueueClient\Queue\QueueClientInterface;
 use Enqueue\Sqs\SqsMessage;
 use Interop\Queue\Context;
 use Interop\Queue\Message;
+use Interop\Queue\Queue;
 
 class SqsClient implements QueueClientInterface
 {
@@ -31,10 +32,10 @@ class SqsClient implements QueueClientInterface
      * @param string $queueName queueName
      * @param \Interop\Queue\Context $context context
      */
-    public function __construct(string $queueName, Context $context)
+    public function __construct(Queue $queue, Context $context)
     {
         $this->context = $context;
-        $this->destination = $this->context->createQueue($queueName);
+        $this->destination = $queue;
     }
 
     /**
