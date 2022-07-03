@@ -9,13 +9,14 @@ use PHPUnit\Framework\TestCase;
 
 class SlackNotificationChannelTest extends TestCase
 {
+    /** @var SlackNotificationChannel */
     protected $notification;
     protected $client;
 
     /**
      * @throws \ReflectionException
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->client = $this->getMockBuilder(Client::class)->getMock();
@@ -69,7 +70,7 @@ class SlackNotificationChannelTest extends TestCase
     public function testPostMessage()
     {
         $response = new Response(200, [], 'test');
-        $this->client->expects($this->once())->method('__call')->willReturn($response);
+        $this->client->expects($this->once())->method('request')->willReturn($response);
         $response = $this->notification->postMessage(['test' => 'test']);
         $this->assertEquals(200, $response->getStatusCode());
     }

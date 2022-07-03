@@ -12,7 +12,6 @@ use PHPUnit\Framework\TestCase;
 
 class SqsClientTest extends TestCase
 {
-
     /**
      * @var SqsClient
      */

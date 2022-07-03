@@ -12,10 +12,9 @@ use Psr\Log\NullLogger;
 
 class BlockerHandlerFactoryTest extends BaseTestCase
 {
-
     protected $factory;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $client = $this->getMockBuilder(SqsClient::class)->disableOriginalConstructor()->getMock();

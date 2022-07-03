@@ -50,7 +50,7 @@ class QueueClientTest extends TestCase
     /**
      * @throws \Exception
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->sqsClient = $this->createMock(SqsClient::class);

@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class SqsContextTest extends TestCase
 {
-
     /**
      * @var \BrighteCapital\QueueClient\Queue\Sqs\SqsContext|\PHPUnit\Framework\MockObject\MockObject
      */

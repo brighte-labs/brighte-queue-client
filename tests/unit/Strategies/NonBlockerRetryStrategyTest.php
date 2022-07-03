@@ -23,7 +23,7 @@ class NonBlockerRetryStrategyTest extends BaseTestCase
     /** @var NonBlockerRetryStrategy */
     protected $strategy;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->client = $this->getMockBuilder(SqsClient::class)->disableOriginalConstructor()->getMock();

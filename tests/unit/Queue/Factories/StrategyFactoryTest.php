@@ -22,7 +22,7 @@ class StrategyFactoryTest extends BaseTestCase
     protected $job;
     protected $factory;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $client = $this->getMockBuilder(SqsClient::class)->disableOriginalConstructor()->getMock();

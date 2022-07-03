@@ -12,7 +12,7 @@ class MessageEntityTest extends BaseTestCase
     /** @var MessageEntity */
     protected $messageEntity;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $message = new SqsMessage('message body', ['type' => 'test']);
