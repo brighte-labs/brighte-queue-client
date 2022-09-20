@@ -11,10 +11,9 @@ use PHPUnit\Framework\TestCase;
 
 class JobTest extends TestCase
 {
-
     protected $job;
     protected $message;
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->message = new SqsMessage('test');
@@ -57,6 +56,6 @@ class JobTest extends TestCase
         $job->pushErrorMessage('error 2');
         $lines = explode("\n", $job->getErrorMessage());
         $this->assertCount(2, $lines);
-        $this->assertContains((new DateTime())->format('Y-m-d'), $lines[0]);
+        $this->assertStringContainsString((new DateTime())->format('Y-m-d'), $lines[0]);
     }
 }

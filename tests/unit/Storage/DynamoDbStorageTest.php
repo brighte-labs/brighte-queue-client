@@ -26,7 +26,7 @@ class DynamoDbStorageTest extends BaseTestCase
     /** @var string */
     protected $tableName = 'test_table';
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->dynamodbClient = $this->createPartialMock(DynamoDbClient::class, [
             'putItem',

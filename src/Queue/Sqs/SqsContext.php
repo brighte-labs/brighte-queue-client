@@ -10,7 +10,6 @@ use Interop\Queue\Producer;
 
 class SqsContext extends \Enqueue\Sqs\SqsContext
 {
-
     public function createMessage(string $body = '', array $properties = [], array $headers = []): Message
     {
         return new SqsMessage($body, $properties, $headers);

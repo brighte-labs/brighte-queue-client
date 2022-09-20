@@ -9,10 +9,9 @@ use Enqueue\Sqs\SqsDestination;
 
 class QueueClientFactoryTest extends BaseTestCase
 {
-
     protected $factory;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->factory = new QueueClientFactory();

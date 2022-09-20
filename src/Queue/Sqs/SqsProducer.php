@@ -12,7 +12,6 @@ use Interop\Queue\Message;
 
 class SqsProducer extends \Enqueue\Sqs\SqsProducer
 {
-
     /**
      * @var SqsContext
      */

@@ -24,7 +24,7 @@ class AbstractRetryStrategyTest extends BaseTestCase
     /** @var AbstractRetryStrategy */
     protected $strategy;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->queue = $this->createMock(Queue::class);

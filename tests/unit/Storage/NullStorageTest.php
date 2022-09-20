@@ -13,7 +13,7 @@ class NullStorageTest extends BaseTestCase
     /** @var  NullStorage*/
     protected $storage;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->messageEntity = $this->getMockBuilder(MessageEntity::class)->getMock();

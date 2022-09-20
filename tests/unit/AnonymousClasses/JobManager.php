@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class JobManager extends TestCase implements JobManagerInterface
 {
-
     public function create(Message $message): Job
     {
         $message = new SqsMessage('testMessage');

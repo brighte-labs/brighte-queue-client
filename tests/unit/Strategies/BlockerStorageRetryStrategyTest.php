@@ -24,7 +24,7 @@ class BlockerStorageRetryStrategyTest extends BaseTestCase
     /** @var BlockerStorageRetryStrategy */
     protected $strategy;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->client = $this->getMockBuilder(SqsClient::class)->disableOriginalConstructor()->getMock();

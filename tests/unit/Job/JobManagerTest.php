@@ -15,7 +15,7 @@ class JobManagerTest extends TestCase
     protected $logger;
     protected $jobManager;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->logger = $this->createMock(LoggerInterface::class);
         $this->jobManager = new JobManager($this->logger);
